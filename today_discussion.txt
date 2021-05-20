@@ -1,0 +1,91 @@
+https://www.baeldung.com/java-asynchronous-programming
+https://java2blog.com/java-futuretask-example/
+https://www.javatpoint.com/completablefuture-in-java
+
+
+Synchronous programming:-
+When one task compeletes we move for the next task. In synchronous 
+programming we dont try to address multiple task at a particular 
+moment. 
+
+Asynchronous programming:-We can start working multiple task and it may 
+happen that some of the tasks are completed and submitted first as
+comparison to the task which takes longer time.
+
+Asynchronous programming is a means of parallel programming in which a unit of work runs separately from the main application thread and notifies the calling thread of its completion, failure or progress.
+---------------------------------------------------------------------------------------------------------------
+JDBC ====> Java Database Connectvity 
+ODBC=======> ( Microsoft Open Database Connectivity)
+
+-------------------------------------------------------------------------------------------------
+1) JDBC is the api ( Application Programming Interface ) which will used in connecting with RDBMS.
+  Classes and interfaces
+
+JDBC Drivers:-----Drivers are acting as a layer of abstraction between the code and database.
+
+Java Code========>JDBC API =========> JDBC Drivers =========> Database
+                 (Interfaces)         (Implementation 
+                                       of the code 
+                                       to interact 
+                                       with the database)
+
+
+
+---------------------------------------------------------------------------------------------
+
+  Java Code ======================================= Oracle
+  (Code specific
+   to Oracle)
+
+  Java Code==========================================MYSQL
+  ( Code specific
+    to MySQL)
+
+---------------------------------------------------------------------------------------------------------
+Microsoft was pioneer in giving the concept of drivers. When Drivers came the code for database
+connectivity were much flexible for making changes
+
+    Java Code ================================= Oracle JDBC Driver======================= Oracle
+    (JDBC API mostly which are interfaces)
+    Java Code ======================================  MySQL JDBC Driver======================= MySQL
+--------------------------------------------------------------------------------------------------------
+https://www.tutorialspoint.com/jdbc/index.htm
+https://www.javatpoint.com/java-jdbc
+https://www.tutorialspoint.com/jdbc/jdbc-driver-types.htm
+-------------------------------------------------------------------------------------------------------------
+What is the package which we are going to use for database connectvity
+and java.sql package will be used.
+-----------------------------------------------------------------------------------------------------------
+In Collection we have an interface called java.util.Collection
+In JDBC we have  an interface called java.sql.Driver. Now the various drivers related to classes like
+OracleDriver related class or MySQL Driver related class implements The java.sql.Driver interface.
+--------------------------------------------------------------------------------------------------------
+We need to drivers so how we are going to get the drivers. Drivers are provided by the database vendors
+and can be downladed from their site.
+
+https://dev.mysql.com/downloads/connector/j/
+
+After downloading I have selected=====> mysql-connector-java-8.0.20.jar
+ ----------------------------------------------------------------------------------
+
+Create a new Java Project.
+
+How to add the driver in the classpath of the project.
+* Right click on the project--------> Build Path--------------------> Configure Build Path
+* Click on the Libraries tab
+* Click on the Button , add external jar                                    
+------------------------------------------------------------------------------------------------------
+For database connectivity we have few steps to follow:
+
+1) Creating the Driver instance.
+Driver driver=new com.mysql.cj.jdbc.Driver();
+2) Registering the Driver with the DriverManager class.
+   DriverManager is a class which keeps an account of the drivers
+   DriverManager.registerDriver(driver);
+3) Creating a connection object from the DriverManager class.
+4) Fetching the data from the table which is already created in the database.
+
+
+   
+
+ 
